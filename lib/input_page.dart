@@ -20,13 +20,18 @@ class _InputPageState extends State<InputPage> {
               Expanded(
                 child:RepeatContainerCode(
                   colors: Color(0xFF1D1E33),
-                  cardWidget: RepeatTextandICONWidgets(),
+                  cardWidget: RepeatTextandICONWidgets(
+                    iconData: FontAwesomeIcons.male,
+                    label: 'MALE',
+                  ),
 
                 ),
               ),
               Expanded(
                 child:RepeatContainerCode(colors: Color(0xFF1D1E33),
-                  cardWidget: RepeatTextandICONWidgets(),),
+                  cardWidget: RepeatTextandICONWidgets(
+                    iconData: FontAwesomeIcons.female,
+                    label: 'FEMALE',),),
               ),
             ],
           ),),
@@ -49,6 +54,7 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RepeatTextandICONWidgets extends StatelessWidget {
+  RepeatTextandICONWidgets({@required this.iconData,this.label});
   final IconData iconData;
   final String label;
 
@@ -59,14 +65,14 @@ class RepeatTextandICONWidgets extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
-          FontAwesomeIcons.male,
+          iconData,
           size: 85.0,
         ),
         SizedBox(
           height: 15.0,
         ),
         Text(
-          'MALE',
+          label,
           style: TextStyle(
           fontSize: 30.0,
           color: Color(0xFF8D8E98),
