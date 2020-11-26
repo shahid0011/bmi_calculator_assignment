@@ -49,6 +49,8 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RepeatTextandICONWidgets extends StatelessWidget {
+  final IconData iconData;
+  final String label;
 
 
   @override
@@ -64,7 +66,8 @@ class RepeatTextandICONWidgets extends StatelessWidget {
           height: 15.0,
         ),
         Text(
-          'MALE',style: TextStyle(
+          'MALE',
+          style: TextStyle(
           fontSize: 30.0,
           color: Color(0xFF8D8E98),
         ),
