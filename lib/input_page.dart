@@ -17,21 +17,24 @@ class _InputPageState extends State<InputPage> {
           Expanded(child:Row(
             children: [
               Expanded(
-                child:RepeatContainercode(),
+                child:RepeatContainerCode(
+                  colors: Color(0xFF1D1E33),
+
+                ),
               ),
               Expanded(
-                child:RepeatContainercode(),
+                child:RepeatContainerCode(colors: Color(0xFF1D1E33),),
               ),
             ],
           ),),
           Expanded(
-            child:RepeatContainercode(),),
+            child:RepeatContainerCode(colors: Color(0xFF1D1E33),),),
           Expanded(child:Row(
           children: [
     Expanded(
-      child:RepeatContainercode(),),
+      child:RepeatContainerCode(colors: Color(0xFF1D1E33),),),
     Expanded(
-      child:RepeatContainercode(),
+      child:RepeatContainerCode(colors: Colors.blue),
     ),
     ],
     ),),
@@ -41,17 +44,15 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class RepeatContainercode extends StatelessWidget {
-  const RepeatContainercode({
-    Key key,
-  }) : super(key: key);
-
+class RepeatContainerCode extends StatelessWidget {
+  RepeatContainerCode({@required this.colors});
+final Color colors;
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: Color(0xFF1D1E33),
+        color: colors,
         borderRadius: BorderRadius.circular(10.0),
       ),
     );
