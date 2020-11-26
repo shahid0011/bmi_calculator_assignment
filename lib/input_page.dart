@@ -20,14 +20,13 @@ class _InputPageState extends State<InputPage> {
               Expanded(
                 child:RepeatContainerCode(
                   colors: Color(0xFF1D1E33),
-                  cardWidget: Column(
-
-                  ),
+                  cardWidget: RepeatTextandICONWidgets(),
 
                 ),
               ),
               Expanded(
-                child:RepeatContainerCode(colors: Color(0xFF1D1E33),),
+                child:RepeatContainerCode(colors: Color(0xFF1D1E33),
+                  cardWidget: RepeatTextandICONWidgets(),),
               ),
             ],
           ),),
@@ -39,11 +38,38 @@ class _InputPageState extends State<InputPage> {
       child:RepeatContainerCode(colors: Color(0xFF1D1E33),),),
     Expanded(
       child:RepeatContainerCode(colors: Colors.blue),
+
     ),
     ],
     ),),
         ],
       ),
+    );
+  }
+}
+
+class RepeatTextandICONWidgets extends StatelessWidget {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          FontAwesomeIcons.male,
+          size: 85.0,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          'MALE',style: TextStyle(
+          fontSize: 30.0,
+          color: Color(0xFF8D8E98),
+        ),
+        ),
+      ],
     );
   }
 }
